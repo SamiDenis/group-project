@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Power Yoga",
+        "description": "You get the yoga vibes combined with a rigorous, fast-paced workout. YOD is designed to hit every aspect of your physical fitness, while creating mindfulness, and awareness of your body. It incorporates strength, flexibility, balance, power, endurance, agility and coordination.",
+        "time": "10am",
+        "price": {
+            "memberPrice": "25",
+            "nonMemberPrice": "35"
+        }
+    },
+
+    {
+        "name": "Hip Hop Class",
+        "description": "Hip hop encompasses a wide range of street styles including breaking, locking and popping. This class for young beginners specifically focuses on developing rhythm and coordination while encouraging individual style.",
+        "time": "12pm",
+        "price": {
+            "memberPrice": "25",
+            "nonMemberPrice": "35"
+        }
+    },
+    {
+        "name": "Calisthenics",
+        "description": "These exercises are often performed rhythmically and with minimal equipment, as bodyweight exercises. They are intended to increase strength, fitness, and flexibility, through movements such as pulling, pushing, bending, jumping, or swinging, using one's body weight for resistance.",
+        "time": "2pm",
+        "price": {
+            "memberPrice": "25",
+            "nonMemberPrice": "35"
+        }
+    }
+
+]
