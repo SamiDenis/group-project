@@ -2,8 +2,10 @@ const express = require("express");
 const router = express();
 const Classes = require("./models/Classes");
 const Instructors = require("./models/Instructors")
+const Schedule = require("./models/Schedule");
 const body = require("body-parser");
 const cors = require("cors");
+
 
 
 router.use(body.json());
@@ -26,21 +28,28 @@ router.get("/Classes/Instructors", (req, res) =>{
     })
 })
 
-router.post("/Classes", (req, res) =>{
-    Classes.create(req.body).then((data) => {
+router.get("/Classes/Schedule", (req, res) => {
+    Schedule.find({}).then(data => {
         res.json(data)
     })
 })
 
-router.put("/Classes/time/:time", (req, res) => {
-    Classes.findOneAndUpdate({ "time": req.params.time }, req.body)
+router.post("/Classes/Schedule", (req, res) =>{
+    Schedule.create(req.body).then((data) => {
+        res.json(data)
+    })
+})
+
+router.put("/Classes/Schedule/:time", (req, res) => {
+    Schedule.findOneAndUpdate({ time: req.params.time }, req.body)
+    
     .then(data => {
         res.json(data)
     })
 })
 
-router.delete("/Classes/:id", (req, res) => {
-    Classes.findOneAndDelete({ "_id": req.params.id }, req.body)
+router.delete("/Classes/:time", (req, res) => {
+    Classes.findOneAndDelete({ "time": req.params.time }, req.body)
     .then(data => {
         res.json(data)
     })

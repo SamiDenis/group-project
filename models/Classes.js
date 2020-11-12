@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const Classes = new Schema({
     "name": String,
     "description": String,
-    "time": String,
+    "time": [String],
     "price": [{
             "memberPrice": Number,
             "nonMemberPrice": Number
