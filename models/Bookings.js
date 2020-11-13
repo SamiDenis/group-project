@@ -3,8 +3,8 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const Bookings = new Schema({
-    "name":String, //class name
-    "decription":String, //drop, don't need, put attendee here
+    "class-name":String, 
+    "attendee":String, 
     "instructor": String, 
     "day": String, 
     "time": String 
