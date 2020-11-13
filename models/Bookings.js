@@ -7,7 +7,8 @@ const Bookings = new Schema({
     "attendee":String, 
     "instructor": String, 
     "day": String, 
-    "time": String 
+    "time": String, 
+    "if-booked": Boolean
    
 })
 
