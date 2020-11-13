@@ -2,7 +2,7 @@ const express = require("express");
 const router = express();
 const Classes = require("./models/Classes");
 const Instructors = require("./models/Instructors")
-const Schedule = require("./models/Schedule");
+const Bookings = require("./models/Bookings");
 const body = require("body-parser");
 const cors = require("cors");
 
@@ -28,28 +28,37 @@ router.get("/Classes/Instructors", (req, res) =>{
     })
 })
 
-router.get("/Classes/Schedule", (req, res) => {
-    Schedule.find({}).then(data => {
+router.get("/Classes/Bookings", (req, res) => {
+    Bookings.find({}).then(data => {
         res.json(data)
     })
 })
 
-router.post("/Classes/Schedule", (req, res) =>{
-    Schedule.create(req.body).then((data) => {
+router.post("/Classes/Bookings", (req, res) =>{
+    Bookings.create(req.body).then((data) => {
         res.json(data)
     })
 })
 
-router.put("/Classes/Schedule/:time", (req, res) => {
-    Schedule.findOneAndUpdate({ time: req.params.time }, req.body)
-    
+router.get("/Classes/Bookings/:id", (req, res) => {
+    Bookings.findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(data => {
         res.json(data)
     })
 })
 
-router.delete("/Classes/:time", (req, res) => {
-    Classes.findOneAndDelete({ "time": req.params.time }, req.body)
+router.put("/Classes/Bookings/:id", (req, res) => {
+    Bookings.findOneAndUpdate({ _id: req.params.id }, req.body)
+    
+    .then(data => {
+        res.json(data)
+}).catch(error => {
+    res.json({error : 'could not update'})
+})
+
+})
+router.delete("/Classes/Bookings/:id", (req, res) => {
+    Bookings.findOneAndDelete({ _id: req.params.id }, req.body)
     .then(data => {
         res.json(data)
     })
