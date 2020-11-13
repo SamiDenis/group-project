@@ -40,16 +40,25 @@ router.post("/Classes/Schedule", (req, res) =>{
     })
 })
 
-router.put("/Classes/Schedule/:time", (req, res) => {
-    Schedule.findOneAndUpdate({ time: req.params.time }, req.body)
-    
+router.get("/Classes/Schedule/:id", (req, res) => {
+    Schedule.findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(data => {
         res.json(data)
     })
 })
 
-router.delete("/Classes/:time", (req, res) => {
-    Classes.findOneAndDelete({ "time": req.params.time }, req.body)
+router.put("/Classes/Schedule/:id", (req, res) => {
+    Schedule.findOneAndUpdate({ _id: req.params.id }, req.body)
+    
+    .then(data => {
+        res.json(data)
+}).catch(error => {
+    res.json({error : 'could not update'})
+})
+
+})
+router.delete("/Classes/Schedule/:id", (req, res) => {
+    Schedule.findOneAndDelete({ _id: req.params.id }, req.body)
     .then(data => {
         res.json(data)
     })
