@@ -2,7 +2,7 @@ const express = require("express");
 const router = express();
 const Classes = require("./models/Classes");
 const Instructors = require("./models/Instructors")
-const Schedule = require("./models/Schedule");
+const Bookings = require("./models/Bookings");
 const body = require("body-parser");
 const cors = require("cors");
 
@@ -28,27 +28,27 @@ router.get("/Classes/Instructors", (req, res) =>{
     })
 })
 
-router.get("/Classes/Schedule", (req, res) => {
-    Schedule.find({}).then(data => {
+router.get("/Classes/Bookings", (req, res) => {
+    Bookings.find({}).then(data => {
         res.json(data)
     })
 })
 
-router.post("/Classes/Schedule", (req, res) =>{
-    Schedule.create(req.body).then((data) => {
+router.post("/Classes/Bookings", (req, res) =>{
+    Bookings.create(req.body).then((data) => {
         res.json(data)
     })
 })
 
-router.get("/Classes/Schedule/:id", (req, res) => {
-    Schedule.findOneAndUpdate({ _id: req.params.id }, req.body)
+router.get("/Classes/Bookings/:id", (req, res) => {
+    Bookings.findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(data => {
         res.json(data)
     })
 })
 
-router.put("/Classes/Schedule/:id", (req, res) => {
-    Schedule.findOneAndUpdate({ _id: req.params.id }, req.body)
+router.put("/Classes/Bookings/:id", (req, res) => {
+    Bookings.findOneAndUpdate({ _id: req.params.id }, req.body)
     
     .then(data => {
         res.json(data)
@@ -57,8 +57,8 @@ router.put("/Classes/Schedule/:id", (req, res) => {
 })
 
 })
-router.delete("/Classes/Schedule/:id", (req, res) => {
-    Schedule.findOneAndDelete({ _id: req.params.id }, req.body)
+router.delete("/Classes/Bookings/:id", (req, res) => {
+    Bookings.findOneAndDelete({ _id: req.params.id }, req.body)
     .then(data => {
         res.json(data)
     })

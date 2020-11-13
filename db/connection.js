@@ -7,6 +7,6 @@ if(process.env.NODE_ENV==="production"){
   mongoURI = "mongodb://localhost/classes";
 }
 
-mongoose.connect(mongoURI, {useNewUrlParser: true}, {useNewUrlParser: true});
+mongoose.connect(mongoURI, {useNewUrlParser: true}, );
 
 module.exports = mongoose;
