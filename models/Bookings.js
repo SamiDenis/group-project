@@ -3,11 +3,10 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const Bookings = new Schema({
-    "class-name":String, 
-    "attendee":String, 
+    "name":String, 
     "instructor": String, 
-    "day": String, 
-    "time": String, 
+    "day": [String], 
+    "time": [String], 
     "if-booked": Boolean
    
 })
