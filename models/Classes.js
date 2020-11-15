@@ -6,7 +6,6 @@ const Classes = new Schema({
     "name": String,
     "description": String,
     "time": [String],
-    //day : date 
     "price": Number 
 })
 
