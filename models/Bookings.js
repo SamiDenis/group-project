@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const Bookings = new Schema({
     // "name":String, 
     // "instructor": String, 
-    "day": [String], 
+    "date": String, 
     // "time": [String], 
     "if-booked": Boolean
    
