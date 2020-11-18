@@ -12,9 +12,6 @@ router.use(body.json());
 
 router.use(cors());
 
-// router.get("/", (req, res) =>{
-//     res.redirect("/Classes")
-// })
 
 router.get("/Classes", (req, res) =>{
     Classes.find({}).then(data => {
