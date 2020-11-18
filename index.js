@@ -13,7 +13,6 @@ router.use(body.json());
 router.use(cors());
 
 
-
 router.get("/Classes", (req, res) =>{
     Classes.find({}).then(data => {
         res.json(data)
